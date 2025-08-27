@@ -1,0 +1,244 @@
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: scale(0.25);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Presentación de Empresa */
+.empresa {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 30px;
+  margin: 20px auto;
+  margin-top: 80px;
+  justify-content: center;
+}
+
+.empresa img {
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+}
+
+.descripcion-empresa p {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 1000px;
+  color: white;
+}
+
+/* Misión - Valores - Visión */
+.contenedor-carta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+.carta {
+  flex: 1 1 280px;
+  max-width: 300px;
+}
+
+.carta h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.carta img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.carta img:hover {
+  transform: scale(1.05);
+}
+
+.carta p {
+  color: #fff;
+  margin-top: 1rem;
+  max-width: 100%;
+  text-align: justify;
+}
+
+/* Tecnologías Usadas */
+.contenedor-tecnologias {
+  animation: show 1s both;
+  background-color: #17171d;
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.contenedor-tecnologias h1 {
+  margin-bottom: 1.5rem;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.tecnologias-img {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.tecnologias-img img {
+  width: 20vw;
+  max-width: 96px;
+  aspect-ratio: 1;
+  transition: transform 0.2s;
+  object-fit: contain;
+}
+
+.tecnologias-img img:hover {
+  transform: scale(1.1);
+}
+
+.tecnologias-img img.webgl {
+  max-width: 156px;
+}
+
+/* Alcance */
+.contenedor-alcance {
+  animation: show 1s both;
+  background-color: #17171d;
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+.contenedor-alcance h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+/* Presentación del Equipo */
+.contenedor-presentacion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #17171d;
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.contenedor-presentacion img {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1;
+  border-radius: 10px;
+}
+
+.descripcion-persona {
+  color: #fff;
+  line-height: 1.6;
+  flex: 1;
+  min-width: 200px;
+}
+
+.descripcion-persona h1 {
+  margin-bottom: 1rem;
+}
+
+/* Botón de descarga */
+.download-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(45deg, #e04f5f, #ff5f99);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+#btn-scroll-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 999;
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  background: #474747;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.4s;
+  padding: 0;
+}
+#btn-scroll-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+#btn-scroll-top:hover {
+  background: #17171d;
+  color: #000000;
+}
+#btn-scroll-top svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+#btn-scroll-top:hover svg circle,
+#btn-scroll-top:hover svg path {
+  stroke: #575656 !important;
+}
+
+/* Responsive general */
+@media (max-width: 768px) {
+  .empresa,
+  .contenedor-presentacion {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .empresa img,
+  .contenedor-presentacion img {
+    max-width: 60%;
+  }
+
+  .carta {
+    max-width: 90%;
+  }
+}

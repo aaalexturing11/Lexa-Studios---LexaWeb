@@ -1,0 +1,170 @@
+
+
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 473px;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.hero h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+}
+
+/* Estilos generales del section */
+.contacto {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20%;
+    padding: 50px;
+    background-color: #101014; /* color de fondo clarito */
+    flex-wrap: wrap; /* para que en pantallas chicas se acomode */
+  }
+  
+  /* Información de contacto (ubicación y redes) */
+  .info-contacto {
+    max-width: 400px;
+  }
+  
+  .info-contacto h2 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    color: white;
+  }
+  
+  .info-contacto p {
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: white;
+  }
+  
+  .redes{
+    margin-top: 200px;
+  }
+
+  /* Redes sociales */
+  .redes-sociales {
+    display: flex;
+    gap: 15px;
+    align-items: end;
+  }
+  .ubicacion{
+    margin-top: 7%;
+  }
+  .socialContainer {
+    border-radius: 20px;
+  }
+
+  /* Formulario */
+  .formulario-contacto {
+    background-color: #17171d;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .formulario-contacto h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: white;
+  }
+  
+  .formulario-contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .formulario-contacto input,
+  .formulario-contacto textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: #101014;
+    font-size: 16px;
+    color:white;
+
+  }
+  
+  .formulario-contacto textarea {
+    min-height: 150px;
+    resize: none;
+  }
+  
+  .formulario-contacto button {
+    padding: 12px;
+    border: 2px solid black;
+    background-color: transparent;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color:white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .formulario-contacto button:hover {
+    background-color: black;
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .redes{
+    margin-top: 0;
+    }
+
+  }
+
+
+
+  .card {
+    width: fit-content;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    gap: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.055);
+  }
+  .socialContainer {
+    width: 52px;
+    height: 52px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: .3s;
+  }
+  .containerOne:hover { background-color: #d62976; }
+  .containerTwo:hover { background-color: #00acee; }
+  .containerThree:hover { background-color: #0072b1; }
+  .containerFour:hover { background-color: #128C7E; }
+  .socialContainer:active { transform: scale(0.9); transition-duration: .3s; }
+  .socialSvg { width: 17px; }
+  .socialSvg path { fill: #2c2c2c; }
+  .socialContainer:hover .socialSvg { animation: slide-in-top 0.3s both; }
+  @keyframes slide-in-top {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }

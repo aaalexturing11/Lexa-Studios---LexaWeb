@@ -1,0 +1,187 @@
+#intro-lexa {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOutIntro 1.2s ease-in-out 4.8s forwards;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+/* Muestra solo el SVG de escritorio en pantallas grandes */
+#lexa-svg-desktop { display: block; }
+#lexa-svg-mobile  { display: none; }
+
+@media (max-width: 700px) {
+  #lexa-svg-desktop { display: none; }
+  #lexa-svg-mobile  { display: block; }
+}
+
+/* SVG dimensiones */
+#intro-lexa svg {
+  width: 70vw;
+  height: 32vw;
+  max-width: 1000px;
+  max-height: 350px;
+}
+
+/* Texto animado */
+.text-stroke {
+  fill: none;
+  stroke: white;
+  stroke-width: 2.5px;
+  font-size: 100px;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 4px;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  animation: draw 4.5s cubic-bezier(.7,0,.21,1) forwards 0.3s;
+}
+
+/* Segunda línea en móvil: trazo empieza después de la primera */
+#lexa-svg-mobile text:nth-child(2) {
+  animation-delay: 2.3s !important;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fadeOutIntro {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+/* Contenedor principal */
+.contenedor-contenidos {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 70px 0px;
+  align-items: center;
+}
+
+/* Tarjeta */
+.contenedor-seccion {
+  display: flex;
+  align-items: center;
+  border-radius: 16px;
+  padding: 30px;
+  gap: 30px;
+  width: 100%;
+  max-width: 1300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contenedor-seccion:hover {
+  transform: translateY(-5px);
+}
+
+/* Imagen */
+.contenedor-seccion img {
+  width: 380px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* Texto */
+.contenedor-seccion .contenido-texto {
+  color: #f0f0f0;
+  font-size: 34px;
+  line-height: 1.6;
+  margin-right: 160px;
+}
+
+.contenedor-seccion .contenido-texto strong {
+  color: #33ccff;
+  font-weight: 600;
+}
+
+#btn-scroll-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 999;
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  background: #474747;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.4s;
+  padding: 0;
+}
+#btn-scroll-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+#btn-scroll-top:hover {
+  background: #17171d;
+  color: #000000;
+}
+#btn-scroll-top svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+#btn-scroll-top:hover svg circle,
+#btn-scroll-top:hover svg path {
+  stroke: #575656 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contenedor-seccion {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .contenedor-seccion img {
+    width: 80%;
+    height: auto;
+  }
+
+  .contenedor-seccion .contenido-texto {
+    color: #f0f0f0;
+    font-size: 24px;
+    line-height: 1.6;
+    margin-right: 0px;
+  }
+
+  #intro-lexa svg {
+    width: 92vw;
+    height: 44vw;
+    max-width: 98vw;
+    max-height: 250px;
+  }
+  .text-stroke {
+    font-size: 150px;
+    letter-spacing: 2.5px;
+    stroke-width: 2px;
+  }
+  #lexa-svg-mobile text:nth-child(1) {
+    y: 90;
+  }
+  #lexa-svg-mobile text:nth-child(2) {
+    y: 175;
+  }
+}

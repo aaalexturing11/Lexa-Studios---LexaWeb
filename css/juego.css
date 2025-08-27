@@ -1,0 +1,374 @@
+.juego {
+  text-align: center;
+  margin-top: 5%;
+}
+
+h1 {
+  font-family: "Pixelify Sans", sans-serif;
+  color: #e4b600;
+  text-align: center;
+  margin-top: 120px;
+  font-size: 6rem;
+}
+
+.alerta {
+  display: none;
+}
+
+h2 {
+  font-family: "Pixelify Sans", sans-serif;
+  color: #e4b600;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.tabla-contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  background-color: #3a0000;
+  border: 8px solid #e4b600;
+  border-radius: 8px;
+  width: 50%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tabla {
+  border-collapse: collapse;
+  font-family: "Pixelify Sans", sans-serif;
+  text-transform: uppercase;
+  color: #e4b600;
+  width: 300px;
+}
+
+.tabla th {
+  background-color: #8b0000;
+  padding: 12px;
+  border: 2px solid #e4b600;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.tabla td {
+  background-color: #5a0000;
+  padding: 10px;
+  border: 2px solid #e4b600;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.tabla tbody tr:nth-child(even) td {
+  background-color: #6a0000;
+}
+
+.tabla tbody tr:hover td {
+  background-color: #e4b600;
+  color: #3a0000;
+  cursor: default;
+}
+
+.FAQs-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 40px 20px;
+  justify-content: center;
+}
+
+.FAQs-contenedor .carta {
+  background: #1f1f27;
+  border-radius: 12px;
+  padding: 24px;
+  height: auto;
+  width: 300px;
+  max-width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: left;
+  border: 4px solid transparent;
+  border-image: conic-gradient(
+      from var(--border-angle),
+      rgb(87, 3, 3),
+      rgb(16, 16, 20),
+      rgb(16, 16, 20)
+    )
+    1;
+  animation: rotateBorder 4s linear infinite;
+}
+
+.FAQs-contenedor .carta h3 {
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.FAQs-contenedor .carta p {
+  color: #ccc;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.chat-bubble {
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 1rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.user {
+  align-self: flex-end;
+  background-color: #5865f2;
+  color: white;
+  border-bottom-right-radius: 0;
+}
+
+.bot {
+  align-self: flex-start;
+  background-color: #2f3136;
+  color: #e0e0e0;
+  border-bottom-left-radius: 0;
+}
+
+input {
+  padding: 10px;
+  width: 70%;
+  border: none;
+  border-radius: 6px 0 0 6px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #f33;
+  color: white;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.input-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+#chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: url("https://i.pinimg.com/736x/8c/b2/bf/8cb2bf0306bf1650ddf37ebe4d993aaa.jpg")
+    no-repeat center center;
+  background-size: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  z-index: 999;
+  transition: margin-bottom 0.3s ease;
+}
+
+#chat-toggle:hover {
+  margin-bottom: 10px;
+}
+
+#chat-box {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 320px;
+  max-height: 500px;
+  background: #1f1f27;
+  border-radius: 12px;
+  border: 2px solid #444;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 998;
+}
+
+#chat-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#chat-input-row {
+  display: flex;
+  padding: 0.5rem;
+  background: #101014;
+}
+
+#chat-input-row input {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 6px 0 0 6px;
+}
+
+#chat-input-row button {
+  background: #f33;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+}
+
+/* —— PODIO —— */
+.podio {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.podio-item {
+  background-color: #5a0000;
+  color: #e4b600;
+  text-align: center;
+  border: 3px solid #e4b600;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  width: 80px;
+}
+
+.podio-item .medalla {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.podio-item .nombre {
+  font-size: 1rem;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  word-wrap: break-word;
+}
+
+.podio-item .puntaje {
+  font-size: 0.9rem;
+}
+
+/* Alturas relativas: primero más alto, segundo/tercero un poco más bajos */
+.podio-item.primero {
+  height: 200px;
+  background-color: #8b0000;
+}
+.podio-item.segundo {
+  height: 160px;
+  background-color: #700000;
+}
+.podio-item.tercero {
+  height: 140px;
+  background-color: #5a0000;
+}
+
+@keyframes rotateBorder {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+@media (max-width: 1100px) {
+  .juego {
+    display: none;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  .alerta {
+    display: block;
+  }
+  .tabla-contenedor {
+    margin-top: 30px;
+    width: 80%;
+  }
+  .tabla {
+    width: 3%;
+  }
+  .FAQs-contenedor {
+    padding: 20px 10px;
+  }
+  .FAQs-contenedor .carta {
+    padding: 16px;
+  }
+
+  .podio {
+    align-items: center;
+    gap: 12px;
+  }
+  .podio-item {
+    width: 90px;
+    padding: 6px;
+  }
+  .podio-item.primero {
+    height: 160px;
+    
+  }
+  .podio-item.segundo {
+    height: 120px;
+  }
+  .podio-item.tercero {
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabla-contenedor {
+    width: 90%;
+    padding: 12px;
+    border-width: 6px;
+  }
+  
+  .tabla {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabla-contenedor {
+    width: 95%;
+    padding: 8px;
+    border-width: 4px;
+  }
+  
+  .tabla th {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+  
+  .tabla td {
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+}

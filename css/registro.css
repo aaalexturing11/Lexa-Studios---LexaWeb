@@ -1,0 +1,25 @@
+/* Estilo del Tipo de Cuenta */
+label[for="role"] {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+
+  }
+  
+  .select-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 0.9rem;
+  }
+
+.tipo-cuenta {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+}
+
+

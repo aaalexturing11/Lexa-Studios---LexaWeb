@@ -1,0 +1,192 @@
+/* -------------------------------------------------- */
+/*    Estilos específicos para el ojo situado abajo   */
+/* -------------------------------------------------- */
+
+/* Contenedor extra para centrar el botón debajo del input */
+.password-toggle-container {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Estilo del botón “ojito” */
+.password-toggle-container .toggle-password-btn {
+  background: #101014;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.password-toggle-container .toggle-password-btn:hover {
+  background: #22222b;
+}
+.password-toggle-container .toggle-password-btn:focus {
+  outline: none;
+}
+
+/* -------------------------------------------------- */
+/*    Barra de fuerza de contraseña (“:c”, “:|”, “:D”) */
+/* -------------------------------------------------- */
+#password-strength-wrapper {
+  margin-top: 0.5rem;
+}
+#password-strength-bar {
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+#password-strength-fill {
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+#password-strength-text {
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  font-weight: bold;
+  color: white; /* La carita siempre en blanco */
+}
+.strength-weak   { background-color: #dc3545; }    /* Rojo   */
+.strength-medium { background-color: #ffc107; }    /* Amarillo */
+.strength-strong { background-color: #28a745; }    /* Verde   */
+
+/* -------------------------------------------------- */
+/*    El resto de tu CSS original (sin tocar salvo    */
+/*    la parte del .login-container que adaptamos)    */
+/* -------------------------------------------------- */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("../img/54487.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  margin: 0;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 75px);
+  margin-top: 80px;
+}
+
+.login-container {
+  background-color: rgba(45, 52, 55, 0.8);
+  /*  100% de ancho hasta un máximo de 350px. En móviles se encoge automáticamente. */
+  width: 100%;
+  max-width: 350px;
+  margin: 0 1rem;            /* Margen lateral, para que no se pegue al borde */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  box-sizing: border-box;     /* Para que padding + ancho funcionen bien */
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 36px;
+}
+
+label {
+  font-weight: bold;
+  color: white;
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+/* input genérico: fondo blanco y texto oscuro */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: white;
+  color: #101014;
+}
+
+input::placeholder {
+  color: #888; /* placeholder más tenue */
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #0066cc;
+  background-color: white;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #101014;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #22222b;
+}
+
+.registrate {
+  color: white;
+  margin-top: 4%;
+}
+
+.click-registrar {
+  color: white;
+  text-decoration: underline;
+}
+.click-registrar:hover {
+  color: #101014;
+}
+
+.registroBoton {
+  margin-top: 8px;
+}
+
+/* -------------------------------------------------- */
+/*    Media query para pantallas muy pequeñas         */
+/* -------------------------------------------------- */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px;       /* Menos padding interno */
+  }
+  h2 {
+    font-size: 1.5rem;   /* Texto más pequeño */
+  }
+  label {
+    font-size: 0.9rem;
+  }
+  input {
+    padding: 8px;
+    font-size: 14px;
+  }
+  button {
+    padding: 8px;
+    font-size: 14px;
+  }
+  .password-toggle-container .toggle-password-btn {
+    font-size: 1rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+#password-requirements {
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+
+#password-requirements[style*="display: none"] {
+  opacity: 0;
+}
+
