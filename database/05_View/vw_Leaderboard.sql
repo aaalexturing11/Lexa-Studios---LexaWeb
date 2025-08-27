@@ -3,6 +3,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+-- 8. Leaderboard view
 CREATE   VIEW [dbo].[vw_Leaderboard] AS
 SELECT TOP 10 u.username, MAX(h.score) AS top_score
   FROM dbo.highscores h

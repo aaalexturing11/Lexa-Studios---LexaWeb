@@ -1,4 +1,3 @@
-// Manejo de registro
 document.getElementById('form-register').addEventListener('submit', async e => {
   e.preventDefault();
   const form = e.target;

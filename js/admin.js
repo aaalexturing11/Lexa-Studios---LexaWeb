@@ -10,12 +10,12 @@ async function loadAdmins() {
     console.error('No existe <tbody id="admins-table-body"> en el DOM.');
     return;
   }
-  tbody.innerHTML = ''; 
+  tbody.innerHTML = '';
 
   try {
     const resp = await fetch('/api/admins', {
       method: 'GET',
-      credentials: 'include' 
+      credentials: 'include'
     });
     if (!resp.ok) {
       console.error('Error al obtener administradores. Status:', resp.status);
@@ -138,7 +138,7 @@ async function loadMessages() {
       tbody.appendChild(tr);
     });
 
-    // Listener de cambios de estado (cuando se elige "done" en el select, borra el mensaje)
+    // Listener de cambios de estado (cuando se elige "done" en el select, se borra el mensaje)
     tbody.querySelectorAll('select').forEach(sel => {
       sel.addEventListener('change', async e => {
         if (e.target.value === 'done') {
@@ -152,7 +152,7 @@ async function loadMessages() {
       });
     });
 
-    // Listener de borrar manual
+    // Listener de borrar con la opción manual
     tbody.querySelectorAll('button[data-delete]').forEach(btn => {
       btn.addEventListener('click', async e => {
         const id = e.target.dataset.delete;
@@ -164,7 +164,7 @@ async function loadMessages() {
       });
     });
 
-    // Listener de descargar mensaje completo
+    // Listener de descargar mensaje completo en txt
     tbody.querySelectorAll('button[data-download]').forEach(btn => {
       btn.addEventListener('click', e => {
         const id = e.target.dataset.download;

@@ -13,11 +13,11 @@
         const res = await fetch('/api/contact_messages', {
           method:      'POST',
           headers:     { 'Content-Type': 'application/json' },
-          credentials: 'include',   // importar cookies
+          credentials: 'include',
           body:        JSON.stringify(payload)
         });
         if (!res.ok) throw new Error(await res.text());
-        alert('Mensaje enviado con éxito');
+        alert('Mensaje enviado con éxito 🎉');
         form.reset();
       } catch (err) {
         console.error(err);

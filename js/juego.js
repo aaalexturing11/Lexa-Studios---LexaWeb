@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const thirdNameEl  = document.getElementById('podio-third-name');
     const thirdScoreEl = document.getElementById('podio-third-score');
 
-    // 2) Limpio tabla y podio
+    // 2) Limpieza de tabla y podio
     tbody.innerHTML = '';
     firstNameEl.textContent = '';
     firstScoreEl.textContent = '';
@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     thirdNameEl.textContent = '';
     thirdScoreEl.textContent = '';
 
-    // 3) Extracción top 3 y el resto de puntuaciones
+    // 3) Extracción top 3 y resto
     const topThree = data.slice(0, 3);
     const resto   = data.slice(3);
 
-    // 4) Podio del top 3
+    // 4) Crear el podio con los lugares
     const primero  = topThree[0] || { username: '-', score: '-' };
     const segundo  = topThree[1] || { username: '-', score: '-' };
     const tercero  = topThree[2] || { username: '-', score: '-' };
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     thirdNameEl  .textContent = tercero.username;
     thirdScoreEl .textContent = tercero.score;
 
-    // 5) Poner el resto de puntuaciones en formato tabla
+    // 5) Poner el resto de los lugares normal
     resto.forEach(row => {
       const tr = document.createElement('tr');
       tr.innerHTML = `<td>${row.username}</td><td>${row.score}</td>`;
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-// Chatbot 
+// Chatbot
 function toggleChatBox() {
   const chatBox = document.getElementById("chat-box");
   chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";

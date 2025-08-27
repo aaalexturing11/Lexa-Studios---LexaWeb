@@ -3,7 +3,7 @@ document.getElementById('form-login').addEventListener('submit', async e => {
   e.preventDefault();
   const form = e.target;
   const data = {
-    username: form.username.value,
+    username: form.username.value, 
     password: form.password.value
   };
 
@@ -21,8 +21,6 @@ document.getElementById('form-login').addEventListener('submit', async e => {
     }
 
     const result = await resp.json();
-    
-    // Guarda datos en localStorage
     localStorage.setItem('userId',   result.id);
     localStorage.setItem('username', result.username);
     localStorage.setItem('userEmail', result.email);

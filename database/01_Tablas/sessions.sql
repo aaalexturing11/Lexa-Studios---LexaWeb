@@ -1,0 +1,7 @@
+CREATE TABLE [dbo].[sessions](
+    [id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    [user_id] INT NOT NULL,
+    [token] UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+    [issued_at] DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
+    [expires_at] DATETIME2 NOT NULL
+);
